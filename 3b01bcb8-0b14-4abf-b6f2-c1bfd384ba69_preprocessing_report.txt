@@ -1,0 +1,23 @@
+Preprocessing Summary
+=====================
+
+Source CSV: 3b01bcb8-0b14-4abf-b6f2-c1bfd384ba69.csv
+Rows: 503, Columns: 11
+Dropped constant columns: ['country', 'last_update']
+Dropped ID-like columns: ['station', 'latitude', 'longitude', 'pollutant_id']
+Imputed numeric missing with median for: pollutant_min (median=11.0)
+Imputed numeric missing with median for: pollutant_max (median=46.0)
+Imputed numeric missing with median for: pollutant_avg (median=34.0)
+Min–max scaled numeric columns to [0,1]: ['pollutant_min', 'pollutant_max', 'pollutant_avg']
+
+Final schema:
+- state: nominal
+- city: string
+- pollutant_min: numeric
+- pollutant_max: numeric
+- pollutant_avg: numeric
+
+Notes:
+- This ARFF uses min–max scaled numeric features and imputes missing values.
+- Object columns with many unique values were exported as STRING to keep the header compact.
+- Consider using Weka's filters (ReplaceMissingValues, Normalize, RemoveUseless) for alternative pipelines.
